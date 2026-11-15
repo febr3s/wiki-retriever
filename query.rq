@@ -1,0 +1,88 @@
+SELECT ?file ?depicts ?depictsLabel WHERE {
+  VALUES ?file {
+    <https://commons.wikimedia.org/entity/M64097084>
+    <https://commons.wikimedia.org/entity/M64457997>
+    <https://commons.wikimedia.org/entity/M64577415>
+    <https://commons.wikimedia.org/entity/M64714903>
+    <https://commons.wikimedia.org/entity/M64714907>
+    <https://commons.wikimedia.org/entity/M64704522>
+    <https://commons.wikimedia.org/entity/M64097579>
+    <https://commons.wikimedia.org/entity/M64097169>
+    <https://commons.wikimedia.org/entity/M64453864>
+    <https://commons.wikimedia.org/entity/M64319974>
+    <https://commons.wikimedia.org/entity/M64097598>
+    <https://commons.wikimedia.org/entity/M64577453>
+    <https://commons.wikimedia.org/entity/M64704145>
+    <https://commons.wikimedia.org/entity/M64458715>
+    <https://commons.wikimedia.org/entity/M64458118>
+    <https://commons.wikimedia.org/entity/M64458047>
+    <https://commons.wikimedia.org/entity/M64714912>
+    <https://commons.wikimedia.org/entity/M64320156>
+    <https://commons.wikimedia.org/entity/M64577502>
+    <https://commons.wikimedia.org/entity/M64320255>
+    <https://commons.wikimedia.org/entity/M64458179>
+    <https://commons.wikimedia.org/entity/M64319785>
+    <https://commons.wikimedia.org/entity/M64319787>
+    <https://commons.wikimedia.org/entity/M64097135>
+    <https://commons.wikimedia.org/entity/M64319966>
+    <https://commons.wikimedia.org/entity/M64454055>
+    <https://commons.wikimedia.org/entity/M64577420>
+    <https://commons.wikimedia.org/entity/M64459397>
+    <https://commons.wikimedia.org/entity/M64704519>
+    <https://commons.wikimedia.org/entity/M64082526>
+    <https://commons.wikimedia.org/entity/M64458822>
+    <https://commons.wikimedia.org/entity/M64577626>
+    <https://commons.wikimedia.org/entity/M64096978>
+    <https://commons.wikimedia.org/entity/M64459287>
+    <https://commons.wikimedia.org/entity/M64577426>
+    <https://commons.wikimedia.org/entity/M64087587>
+    <https://commons.wikimedia.org/entity/M64576289>
+    <https://commons.wikimedia.org/entity/M64453992>
+    <https://commons.wikimedia.org/entity/M64714880>
+    <https://commons.wikimedia.org/entity/M64577407>
+    <https://commons.wikimedia.org/entity/M64458780>
+    <https://commons.wikimedia.org/entity/M64714802>
+    <https://commons.wikimedia.org/entity/M64577319>
+    <https://commons.wikimedia.org/entity/M64577263>
+    <https://commons.wikimedia.org/entity/M64086840>
+    <https://commons.wikimedia.org/entity/M64702658>
+    <https://commons.wikimedia.org/entity/M64458405>
+    <https://commons.wikimedia.org/entity/M64319980>
+    <https://commons.wikimedia.org/entity/M64096399>
+    <https://commons.wikimedia.org/entity/M64714649>
+    <https://commons.wikimedia.org/entity/M64459017>
+    <https://commons.wikimedia.org/entity/M64715100>
+    <https://commons.wikimedia.org/entity/M64083102>
+    <https://commons.wikimedia.org/entity/M64458214>
+    <https://commons.wikimedia.org/entity/M64320253>
+    <https://commons.wikimedia.org/entity/M64087039>
+    <https://commons.wikimedia.org/entity/M64319172>
+    <https://commons.wikimedia.org/entity/M64714659>
+    <https://commons.wikimedia.org/entity/M64456185>
+    <https://commons.wikimedia.org/entity/M64456211>
+    <https://commons.wikimedia.org/entity/M64456229>
+    <https://commons.wikimedia.org/entity/M64576561>
+    <https://commons.wikimedia.org/entity/M64576564>
+    <https://commons.wikimedia.org/entity/M64320057>
+    <https://commons.wikimedia.org/entity/M64086182>
+    <https://commons.wikimedia.org/entity/M64094330>
+    <https://commons.wikimedia.org/entity/M64094423>
+    <https://commons.wikimedia.org/entity/M64576223>
+    <https://commons.wikimedia.org/entity/M64097006>
+    <https://commons.wikimedia.org/entity/M64714597>
+    <https://commons.wikimedia.org/entity/M64459331>
+    <https://commons.wikimedia.org/entity/M64715154>
+    <https://commons.wikimedia.org/entity/M64704184>
+    <https://commons.wikimedia.org/entity/M64459200>
+    <https://commons.wikimedia.org/entity/M64097407>
+    <https://commons.wikimedia.org/entity/M64575872>
+    <https://commons.wikimedia.org/entity/M64522683>
+  }
+  OPTIONAL { ?file wdt:P180 ?depicts . }
+  OPTIONAL {
+    SERVICE <https://query.wikidata.org/sparql> {
+      ?depicts rdfs:label ?depictsLabel .
+      FILTER(LANG(?depictsLabel) = "en")
+    }
+  }
+}
