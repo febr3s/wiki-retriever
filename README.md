@@ -1,4 +1,4 @@
-1: generate the request
+1: generate the ids (run id-list-generator.py)
 2: download via command line 
 
 ```curl -A "MyDownloaderScript/1.0 (contact@example.com)" \

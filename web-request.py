@@ -1,10 +1,13 @@
 import json, csv, re, time, requests
 
-with open("categorymembers.json", encoding="utf-8") as f:
-    members = json.load(f)["query"]["categorymembers"]
-
 API = "https://commons.wikimedia.org/w/api.php"
 HEADERS = {"User-Agent": "Artwork-Template-To-CSV/1.0 (you@example.org) requests/2"}
+CATEGORY = "Artworks of Colombia in the Cooper–Hewitt, Smithsonian Design Museum"
+
+
+with open(f"{CATEGORY.replace(' ', '_')}.json", encoding="utf-8") as f:
+    members = json.load(f)["query"]["categorymembers"]
+
 
 def fetch_wikitext(pageid, retries=3):
     params = {
@@ -110,7 +113,7 @@ all_keys.discard("pageid")
 all_keys.discard("title")
 fieldnames = ["pageid", "title"] + sorted(all_keys)
 
-with open("artwork_metadata.csv", "w", newline="", encoding="utf-8") as f:
+with open(f"{CATEGORY.replace(' ', '_')}_wikitext.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, fieldnames=fieldnames)
     w.writeheader()
     for r in rows:
