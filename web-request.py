@@ -1,8 +1,8 @@
 import json, csv, re, time, requests
-
-API = "https://commons.wikimedia.org/w/api.php"
-HEADERS = {"User-Agent": "Artwork-Template-To-CSV/1.0 (you@example.org) requests/2"}
-CATEGORY = "Art of Colombia"
+from config import API, HEADERS, CATEGORY
+# API = "https://commons.wikimedia.org/w/api.php"
+# HEADERS = {"User-Agent": "Artwork-Template-To-CSV/1.0 (you@example.org) requests/2"}
+# CATEGORY = "Art of Colombia"
 
 
 with open(f"output/{CATEGORY.replace(' ', '_')}.json", encoding="utf-8") as f:
@@ -113,10 +113,10 @@ all_keys.discard("pageid")
 all_keys.discard("title")
 fieldnames = ["pageid", "title"] + sorted(all_keys)
 
-with open(f"subfolder/{CATEGORY.replace(' ', '_')}_wikitext.csv", "w", newline="", encoding="utf-8") as f:
+with open(f"output/{CATEGORY.replace(' ', '_')}_wikitext.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, fieldnames=fieldnames)
     w.writeheader()
     for r in rows:
         w.writerow({k: r.get(k, "") for k in fieldnames})
 
-print(f"Wrote {len(rows)} rows to artwork_metadata.csv")
+print(f"Wrote {len(rows)} rows")

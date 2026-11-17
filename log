@@ -4,3 +4,4 @@ Pendiente:
 
 X Probar con otras categorías y hacer dinámico el nombre de archivo en id-list-generator.
 x Limpiar el output de api-request.
+- fijar variables en config.py y hacer que se lean desde ahí en los otros scripts.

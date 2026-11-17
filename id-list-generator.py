@@ -1,8 +1,8 @@
 import json, requests
-
-API = "https://commons.wikimedia.org/w/api.php"
-HEADERS = {"User-Agent": "SDC-fetch/1.0 (you@example.org) requests/2"}
-CATEGORY = "Art of Colombia"
+from config import API, HEADERS, CATEGORY
+# API = "https://commons.wikimedia.org/w/api.php"
+# HEADERS = {"User-Agent": "SDC-fetch/1.0 (you@example.org) requests/2"}
+# CATEGORY = "Art of Colombia"
 
 def fetch_category(category):
     params = {
