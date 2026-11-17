@@ -2,7 +2,7 @@ import json, requests
 
 API = "https://commons.wikimedia.org/w/api.php"
 HEADERS = {"User-Agent": "SDC-fetch/1.0 (you@example.org) requests/2"}
-CATEGORY = "Paintings from Colombia"
+CATEGORY = "Art of Colombia"
 
 def fetch_category(category):
     params = {
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     category = CATEGORY
     members = fetch_category(category)
 
-    with open(f"{category.replace(' ', '_')}.json", "w", encoding="utf-8") as f:
+    with open(f"output/{category.replace(' ', '_')}.json", "w", encoding="utf-8") as f:
         json.dump({"batchcomplete": "", "query": {"categorymembers": members}},
                   f, indent=2, ensure_ascii=False)
 

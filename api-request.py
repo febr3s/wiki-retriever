@@ -1,8 +1,8 @@
 import json, csv, time, requests
 
-CATEGORY = "Paintings from Colombia"
+CATEGORY = "Art of Colombia"
 
-with open(f"{CATEGORY.replace(' ', '_')}.json", encoding="utf-8") as f:
+with open(f"output/{CATEGORY.replace(' ', '_')}.json", encoding="utf-8") as f:
     members = json.load(f)["query"]["categorymembers"]
 
 API = "https://commons.wikimedia.org/w/api.php"
@@ -98,7 +98,7 @@ for row in rows:
         else:
             row["value_label"] = v[1:] if v.startswith("+") else v
 
-with open(f"{CATEGORY.replace(' ', '_')}.csv", "w", newline="", encoding="utf-8") as f:
+with open(f"output/{CATEGORY.replace(' ', '_')}.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, fieldnames=["file", "title", "type", "lang",
                                       "property", "property_label",
                                       "value", "value_label"])
