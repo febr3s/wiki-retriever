@@ -2,7 +2,7 @@ import json, csv, re, time, requests
 
 API = "https://commons.wikimedia.org/w/api.php"
 HEADERS = {"User-Agent": "Artwork-Template-To-CSV/1.0 (you@example.org) requests/2"}
-CATEGORY = "Artworks of Colombia in the Cooper–Hewitt, Smithsonian Design Museum"
+CATEGORY = "Paintings from Colombia"
 
 
 with open(f"{CATEGORY.replace(' ', '_')}.json", encoding="utf-8") as f:
